@@ -64,8 +64,8 @@ npm test
 git diff --check
 ```
 
-The [contract](docs/specs/handoff.md) records the delegated feature choice and
-constraints. The [qualification plan](docs/plans/2026/11-14/preview.md) separates
+The [contract](https://github.com/alvarovillalbaa/contextlet/blob/HEAD/docs/specs/handoff.md) records the delegated feature choice and
+constraints. The [qualification plan](https://github.com/alvarovillalbaa/contextlet/blob/HEAD/docs/plans/2026/11-14/preview.md) separates
 18 core cases, four real packaged Extension Host scenarios, packaging and public
 delivery. Native dialog use, macOS/Windows, physical accessibility and Marketplace
 publication remain separate from Linux host checks. No Vercel/Supabase is needed.

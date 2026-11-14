@@ -1,0 +1,83 @@
+{
+  "commands": [
+    {
+      "name": "versions",
+      "argv": [
+        "node",
+        "--version"
+      ],
+      "exit": 0,
+      "timedOut": false,
+      "leaderReaped": true,
+      "groupAbsent": true,
+      "seconds": 0.0044505619999988255,
+      "stdoutBytes": 9,
+      "stderrBytes": 0,
+      "stdoutSha256": "2266957ed9a639bd7264d714bfa798a961510bf2e50695c668ab8fc0c3f4e906",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "tools",
+      "argv": [
+        "npm",
+        "ci",
+        "--prefix",
+        "/tmp/contextlet-preview-0w8jti0t/tools",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "exit": 0,
+      "timedOut": false,
+      "leaderReaped": true,
+      "groupAbsent": true,
+      "seconds": 5.187935111000002,
+      "stdoutBytes": 26,
+      "stderrBytes": 549,
+      "stdoutSha256": "f7d8dab1cd5dc39f29c371a13717b07693c6724398a45aec3dda6ea0edfd1f59",
+      "stderrSha256": "74f87fbf831fafecb92305a191d75ff811b540d669265600b7859e50955cad8c"
+    },
+    {
+      "name": "package",
+      "argv": [
+        "/tmp/contextlet-preview-0w8jti0t/tools/node_modules/.bin/vsce",
+        "package",
+        "--no-dependencies",
+        "--out",
+        "/home/runner/work/_temp/contextlet-preview-originals/contextlet-0.1.0.vsix"
+      ],
+      "exit": 0,
+      "timedOut": false,
+      "leaderReaped": true,
+      "groupAbsent": true,
+      "seconds": 0.8005678500000002,
+      "stdoutBytes": 425,
+      "stderrBytes": 0,
+      "stdoutSha256": "a777afde37d05cfaa1dcc7b515b91bc76bdc1d91380bfa25c677c5adf6860687",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "host",
+      "argv": [
+        "xvfb-run",
+        "-a",
+        "node",
+        "tests/scripts/run-host.cjs"
+      ],
+      "exit": 1,
+      "timedOut": false,
+      "leaderReaped": true,
+      "groupAbsent": true,
+      "seconds": 10.538910346000002,
+      "stdoutBytes": 469,
+      "stderrBytes": 0,
+      "stdoutSha256": "d0d21077b8d56165c517ce67f4654d08a0910032f25c99f848ce98178ad9e00e",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "passed": false,
+  "cleanup": true,
+  "error": "RuntimeError('host did not close successfully')",
+  "sourceUnchanged": true,
+  "scratchBytes": 524282400
+}

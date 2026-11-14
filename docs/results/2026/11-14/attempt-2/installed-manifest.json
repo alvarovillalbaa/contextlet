@@ -1,0 +1,154 @@
+{
+	"name": "contextlet",
+	"displayName": "Contextlet",
+	"description": "Review selected code and diagnostics before copying a local Markdown handoff.",
+	"version": "0.1.0",
+	"publisher": "alvarovillalbaa",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.95.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"context",
+		"handoff",
+		"markdown",
+		"local"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/alvarovillalbaa/contextlet.git"
+	},
+	"main": "./src/extension.cjs",
+	"extensionKind": [
+		"workspace"
+	],
+	"capabilities": {
+		"untrustedWorkspaces": {
+			"supported": false,
+			"description": "Capture is available only in trusted local workspaces."
+		},
+		"virtualWorkspaces": {
+			"supported": false
+		}
+	},
+	"scripts": {
+		"check": "node --check src/core.cjs && node --check src/extension.cjs && node --check tests/integration/suite.cjs && node --check tests/scripts/run-host.cjs",
+		"test": "node --test tests/unit/core.test.cjs"
+	},
+	"contributes": {
+		"commands": [
+			{
+				"command": "contextlet.addSelection",
+				"title": "Add Selection",
+				"category": "Contextlet",
+				"icon": "$(add)"
+			},
+			{
+				"command": "contextlet.addFile",
+				"title": "Add Current File",
+				"category": "Contextlet"
+			},
+			{
+				"command": "contextlet.addDiagnostics",
+				"title": "Add Current File Problems",
+				"category": "Contextlet"
+			},
+			{
+				"command": "contextlet.setTask",
+				"title": "Describe Task",
+				"category": "Contextlet",
+				"icon": "$(edit)"
+			},
+			{
+				"command": "contextlet.review",
+				"title": "Review Handoff",
+				"category": "Contextlet",
+				"icon": "$(open-preview)"
+			},
+			{
+				"command": "contextlet.copyReview",
+				"title": "Copy Reviewed Markdown",
+				"category": "Contextlet"
+			},
+			{
+				"command": "contextlet.saveReview",
+				"title": "Save Reviewed Markdown As…",
+				"category": "Contextlet"
+			},
+			{
+				"command": "contextlet.remove",
+				"title": "Remove Capture",
+				"category": "Contextlet",
+				"icon": "$(close)"
+			},
+			{
+				"command": "contextlet.clear",
+				"title": "Clear Captures and Task",
+				"category": "Contextlet",
+				"icon": "$(clear-all)"
+			}
+		],
+		"views": {
+			"explorer": [
+				{
+					"id": "contextlet.handoff",
+					"name": "Contextlet"
+				}
+			]
+		},
+		"viewsWelcome": [
+			{
+				"view": "contextlet.handoff",
+				"contents": "Collect a small, explicit handoff. Captures stay in this window's memory.\n[Add Selection](command:contextlet.addSelection)\n[Add Current File](command:contextlet.addFile)\n[Add Current File Problems](command:contextlet.addDiagnostics)\n[Describe Task](command:contextlet.setTask)\n\nReview the Markdown before copying or saving."
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"command": "contextlet.addSelection",
+					"when": "editorHasSelection && resourceScheme == file",
+					"group": "contextlet"
+				}
+			],
+			"view/title": [
+				{
+					"command": "contextlet.setTask",
+					"when": "view == contextlet.handoff",
+					"group": "navigation"
+				},
+				{
+					"command": "contextlet.review",
+					"when": "view == contextlet.handoff",
+					"group": "navigation"
+				},
+				{
+					"command": "contextlet.clear",
+					"when": "view == contextlet.handoff",
+					"group": "navigation"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "contextlet.remove",
+					"when": "view == contextlet.handoff && viewItem == capture",
+					"group": "inline"
+				}
+			],
+			"commandPalette": [
+				{
+					"command": "contextlet.remove",
+					"when": "false"
+				}
+			]
+		}
+	},
+	"__metadata": {
+		"isApplicationScoped": false,
+		"installedTimestamp": 1794616193747,
+		"pinned": true,
+		"source": "vsix"
+	}
+}

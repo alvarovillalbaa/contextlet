@@ -1,0 +1,8 @@
+- Resolving version...
+✔ Validated version: 1.95.3
+- Found at https://update.code.visualstudio.com/1.95.3/linux-x64/stable?released=true
+✔ Found at https://update.code.visualstudio.com/1.95.3/linux-x64/stable?released=true
+- Downloading (141.50 MB)
+✔ Downloaded VS Code into /tmp/contextlet-preview-0w8jti0t/vscode/vscode-linux-x64-1.95.3
+Error: Installed payload differs: README.md
+    at /home/runner/work/contextlet/contextlet/tests/scripts/run-host.cjs:32:48
