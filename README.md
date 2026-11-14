@@ -26,8 +26,8 @@ retain opened unsaved reviews through its own editor backup settings.
 
 ## Install
 
-The first preview is being qualified. The public GitHub release will supply
-`contextlet-0.1.0.vsix`; use **Extensions → … → Install from VSIX…** or:
+Download the [0.1.0 developer preview](https://github.com/alvarovillalbaa/contextlet/releases/tag/v0.1.0-preview.1)
+and its `contextlet-0.1.0.vsix`; use **Extensions → … → Install from VSIX…** or:
 
 ```sh
 code --install-extension contextlet-0.1.0.vsix
@@ -69,5 +69,11 @@ constraints. The [qualification plan](https://github.com/alvarovillalbaa/context
 18 core cases, four real packaged Extension Host scenarios, packaging and public
 delivery. Native dialog use, macOS/Windows, physical accessibility and Marketplace
 publication remain separate from Linux host checks. No Vercel/Supabase is needed.
+
+[Qualification and publication evidence](docs/results/2026/11-14/preview.md):
+18 separate local core passes and four real packaged Extension Host passes.
+Both prior observer failures are preserved. The public VSIX is the unchanged
+qualified artifact, with server size/hash readback; an anonymous download could
+not be verified from this workspace because shell DNS failed.
 
 MIT licensed. [Source](https://github.com/alvarovillalbaa/contextlet).

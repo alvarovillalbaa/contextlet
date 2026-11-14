@@ -1,0 +1,50 @@
+[
+  {
+    "file": "package.json",
+    "installedName": "package.json",
+    "comparison": "all product fields; installer __metadata excluded",
+    "bytes": 3662,
+    "sha256": "cf0d56685d2a3382344418774c1ed926930a657ef687b4b6e76d496e9a902233",
+    "sourceSha256": "a83ccbf07693bdb384fbb4be2323eb6ba08bbad53517df313b3df0555d713f67"
+  },
+  {
+    "file": "src/core.cjs",
+    "installedName": "src/core.cjs",
+    "comparison": "exact bytes",
+    "bytes": 4608,
+    "sha256": "71c4dbb065e0c02be9486770a6300b6cefa44d7abfd83286c1ecf357d3041746",
+    "sourceSha256": "71c4dbb065e0c02be9486770a6300b6cefa44d7abfd83286c1ecf357d3041746"
+  },
+  {
+    "file": "src/extension.cjs",
+    "installedName": "src/extension.cjs",
+    "comparison": "exact bytes",
+    "bytes": 6937,
+    "sha256": "e6d1b29636c68792ebc630f68bf9ed84f22e6f37697c512b593883c2b3151852",
+    "sourceSha256": "e6d1b29636c68792ebc630f68bf9ed84f22e6f37697c512b593883c2b3151852"
+  },
+  {
+    "file": "README.md",
+    "installedName": "readme.md",
+    "comparison": "exact bytes",
+    "bytes": 3539,
+    "sha256": "27a99c4ced1144ebe97b5c137c97ddf2887bf6b44a3247ea7299c5457d603c24",
+    "sourceSha256": "27a99c4ced1144ebe97b5c137c97ddf2887bf6b44a3247ea7299c5457d603c24"
+  },
+  {
+    "file": "LICENSE",
+    "installedName": "LICENSE.txt",
+    "comparison": "exact bytes",
+    "bytes": 1072,
+    "sha256": "7b67dcaf3272d2ec162c78712f8b10f1162ec2b1cd14003b2aa2c1902c2ba6e4",
+    "sourceSha256": "7b67dcaf3272d2ec162c78712f8b10f1162ec2b1cd14003b2aa2c1902c2ba6e4"
+  },
+  {
+    "file": "CHANGELOG.md",
+    "installedName": "changelog.md",
+    "comparison": "exact bytes",
+    "bytes": 326,
+    "sha256": "744fd683cc75ae5ca7e6b2c9692f204f7dc3b5fbf89d517e5d83fa49ac500230",
+    "sourceSha256": "744fd683cc75ae5ca7e6b2c9692f204f7dc3b5fbf89d517e5d83fa49ac500230"
+  }
+]

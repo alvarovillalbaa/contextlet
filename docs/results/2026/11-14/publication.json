@@ -1,0 +1,68 @@
+{
+  "source": "1a8cb2654bc3c05a6553af0773e54356bf9c53e1",
+  "sourceTree": "975d8df737785f90b2b1be93efe771caf0349cf6",
+  "release": {
+    "id": 444880992,
+    "url": "https://github.com/alvarovillalbaa/contextlet/releases/tag/v0.1.0-preview.1",
+    "tag": "v0.1.0-preview.1",
+    "publishedAt": "2026-11-14T00:34:35Z",
+    "draft": false,
+    "prerelease": true,
+    "assets": [
+      {
+        "id": 745733496,
+        "name": "contextlet-0.1.0.vsix",
+        "bytes": 10002,
+        "digest": "sha256:ddf8aa2399e6d154424d210597ac028598532eb471688ebe5a160a2ac23f5052",
+        "url": "https://github.com/alvarovillalbaa/contextlet/releases/download/v0.1.0-preview.1/contextlet-0.1.0.vsix"
+      },
+      {
+        "id": 745733596,
+        "name": "contextlet-0.1.0.vsix.sha256",
+        "bytes": 88,
+        "digest": "sha256:f632ad0c98be0d8cd3e525549891c4f9f785a1f08ef9aeaf6e503e8e0b9d7bf0",
+        "url": "https://github.com/alvarovillalbaa/contextlet/releases/download/v0.1.0-preview.1/contextlet-0.1.0.vsix.sha256"
+      }
+    ]
+  },
+  "workflow": {
+    "id": 417886494,
+    "state": "disabled_manually",
+    "qaRefsRetired": [
+      {
+        "branch": "qa/contextlet-preview-20261114-1",
+        "sha": "5f68efd1e5c928e3764f48d3077366c145c0fd14",
+        "deleted": true
+      },
+      {
+        "branch": "qa/contextlet-preview-20261114-2",
+        "sha": "29cff6cd18ae1abe3f9482654cfd27abf2c35fee",
+        "deleted": true
+      },
+      {
+        "branch": "qa/contextlet-preview-20261114-3",
+        "sha": "1a8cb2654bc3c05a6553af0773e54356bf9c53e1",
+        "deleted": true
+      }
+    ],
+    "prefixReadback": []
+  },
+  "anonymousDownload": {
+    "verified": false,
+    "commands": 2,
+    "exit": 6,
+    "error": "Could not resolve host: github.com",
+    "bodies": 0
+  },
+  "qualification": {
+    "run": 43534770077,
+    "job": 132260982276,
+    "artifact": 14088154005,
+    "bytes": 59513,
+    "sha256": "fa2e1edebd30b096b35b4675c5900507f9090f69301d4c864c79ed03d2a1067a",
+    "hostCases": 4,
+    "localCoreCases": 18,
+    "separateExecutions": true
+  },
+  "portfolioGoal": "active and unfinished"
+}

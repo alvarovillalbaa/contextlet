@@ -1,0 +1,2 @@
+Option 'user-data-dir' is defined more than once. Using value '/tmp/contextlet-preview-__v3cz5b/profile'.
+Option 'extensions-dir' is defined more than once. Using value '/tmp/contextlet-preview-__v3cz5b/extensions'.

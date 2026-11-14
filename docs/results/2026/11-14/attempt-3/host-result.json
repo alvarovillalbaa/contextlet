@@ -1,0 +1,26 @@
+{
+  "vscodeVersion": "1.95.3",
+  "extensionPath": "/tmp/contextlet-preview-__v3cz5b/extensions/alvarovillalbaa.contextlet-0.1.0",
+  "rows": [
+    {
+      "id": "H01 selected dirty snapshots, editable review and actual clipboard",
+      "passed": true,
+      "durationMs": 1899
+    },
+    {
+      "id": "H02 actual diagnostics capture and removal",
+      "passed": true,
+      "durationMs": 321
+    },
+    {
+      "id": "H03 actual sensitive paths, symlink escape and foreign file refuse",
+      "passed": true,
+      "durationMs": 476
+    },
+    {
+      "id": "H04 whole file, empty selection, size refusal and clear",
+      "passed": true,
+      "durationMs": 206
+    }
+  ]
+}

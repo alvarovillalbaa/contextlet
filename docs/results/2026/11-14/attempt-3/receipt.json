@@ -1,0 +1,86 @@
+{
+  "commands": [
+    {
+      "name": "versions",
+      "argv": [
+        "node",
+        "--version"
+      ],
+      "exit": 0,
+      "timedOut": false,
+      "leaderReaped": true,
+      "groupAbsent": true,
+      "seconds": 0.004993501000001288,
+      "stdoutBytes": 9,
+      "stderrBytes": 0,
+      "stdoutSha256": "2266957ed9a639bd7264d714bfa798a961510bf2e50695c668ab8fc0c3f4e906",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "tools",
+      "argv": [
+        "npm",
+        "ci",
+        "--prefix",
+        "/tmp/contextlet-preview-__v3cz5b/tools",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "exit": 0,
+      "timedOut": false,
+      "leaderReaped": true,
+      "groupAbsent": true,
+      "seconds": 5.3003074039999944,
+      "stdoutBytes": 26,
+      "stderrBytes": 549,
+      "stdoutSha256": "f7d8dab1cd5dc39f29c371a13717b07693c6724398a45aec3dda6ea0edfd1f59",
+      "stderrSha256": "74f87fbf831fafecb92305a191d75ff811b540d669265600b7859e50955cad8c"
+    },
+    {
+      "name": "package",
+      "argv": [
+        "/tmp/contextlet-preview-__v3cz5b/tools/node_modules/.bin/vsce",
+        "package",
+        "--no-dependencies",
+        "--out",
+        "/home/runner/work/_temp/contextlet-preview-originals/contextlet-0.1.0.vsix"
+      ],
+      "exit": 0,
+      "timedOut": false,
+      "leaderReaped": true,
+      "groupAbsent": true,
+      "seconds": 0.8152599340000108,
+      "stdoutBytes": 425,
+      "stderrBytes": 0,
+      "stdoutSha256": "a777afde37d05cfaa1dcc7b515b91bc76bdc1d91380bfa25c677c5adf6860687",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "host",
+      "argv": [
+        "xvfb-run",
+        "-a",
+        "node",
+        "tests/scripts/run-host.cjs"
+      ],
+      "exit": 0,
+      "timedOut": false,
+      "leaderReaped": true,
+      "groupAbsent": true,
+      "seconds": 12.832930819000012,
+      "stdoutBytes": 8908,
+      "stderrBytes": 0,
+      "stdoutSha256": "2b53f534fb13702acefd3dbbd12c7200737eb96ae26bc894ecd03553937813e5",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "passed": true,
+  "cleanup": true,
+  "package": {
+    "bytes": 10002,
+    "sha256": "ddf8aa2399e6d154424d210597ac028598532eb471688ebe5a160a2ac23f5052"
+  },
+  "sourceUnchanged": true,
+  "scratchBytes": 538459406
+}
