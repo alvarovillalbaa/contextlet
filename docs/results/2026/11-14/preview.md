@@ -78,7 +78,8 @@ failures and no assets. No permission/auth failure was bypassed. Direct anonymou
 GETs of both public assets failed local DNS (curl exit6), producing no bodies.
 Public API/tag/server digest evidence is not anonymous-download proof.
 
-Workflow417886494 is disabled_manually by fresh readback. All three exact QA
+Workflow417886494 was disabled_manually before publication. After removing its
+default-branch file, the fresh API state is deleted. All three exact QA
 heads were checked, deleted and their shared prefix read back empty. Final
 publication removes the manual workflow from main; no permanent CI is introduced.
 Later README/evidence edits preserve runtime/package/test/controller/tool-lock

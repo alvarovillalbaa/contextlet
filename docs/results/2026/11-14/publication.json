@@ -27,7 +27,8 @@
   },
   "workflow": {
     "id": 417886494,
-    "state": "disabled_manually",
+    "state": "deleted",
+    "priorStateBeforeWorkflowRemoval": "disabled_manually",
     "qaRefsRetired": [
       {
         "branch": "qa/contextlet-preview-20261114-1",
