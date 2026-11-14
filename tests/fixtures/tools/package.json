@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@vscode/test-electron": "^2.5.2",
+    "@vscode/vsce": "^3.6.2"
+  }
+}

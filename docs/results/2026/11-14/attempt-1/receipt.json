@@ -1,0 +1,85 @@
+{
+  "commands": [
+    {
+      "name": "versions",
+      "argv": [
+        "node",
+        "--version"
+      ],
+      "exit": 0,
+      "timedOut": false,
+      "leaderReaped": true,
+      "groupAbsent": true,
+      "seconds": 0.0038007889999995825,
+      "stdoutBytes": 9,
+      "stderrBytes": 0,
+      "stdoutSha256": "2266957ed9a639bd7264d714bfa798a961510bf2e50695c668ab8fc0c3f4e906",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "tools",
+      "argv": [
+        "npm",
+        "install",
+        "--prefix",
+        "/tmp/contextlet-preview-nie7kflf/tools",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund",
+        "@vscode/test-electron@2.5.2",
+        "@vscode/vsce@3.6.2"
+      ],
+      "exit": 0,
+      "timedOut": false,
+      "leaderReaped": true,
+      "groupAbsent": true,
+      "seconds": 8.477938959999996,
+      "stdoutBytes": 26,
+      "stderrBytes": 549,
+      "stdoutSha256": "f5b5ca758505a9c490560bcb9325ace19d499db10d3b2ae40fe0d219df6c125c",
+      "stderrSha256": "0df3525ff8e895e3ff8d156dced3545059c6d2a25cdd1e8d8ef25b15c986e322"
+    },
+    {
+      "name": "package",
+      "argv": [
+        "/tmp/contextlet-preview-nie7kflf/tools/node_modules/.bin/vsce",
+        "package",
+        "--no-dependencies",
+        "--out",
+        "/home/runner/work/_temp/contextlet-preview-originals/contextlet-0.1.0.vsix"
+      ],
+      "exit": 0,
+      "timedOut": false,
+      "leaderReaped": true,
+      "groupAbsent": true,
+      "seconds": 0.46145590900000144,
+      "stdoutBytes": 425,
+      "stderrBytes": 0,
+      "stdoutSha256": "a777afde37d05cfaa1dcc7b515b91bc76bdc1d91380bfa25c677c5adf6860687",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "host",
+      "argv": [
+        "xvfb-run",
+        "-a",
+        "node",
+        "tests/scripts/run-host.cjs"
+      ],
+      "exit": 1,
+      "timedOut": false,
+      "leaderReaped": true,
+      "groupAbsent": true,
+      "seconds": 18.322093960000004,
+      "stdoutBytes": 688,
+      "stderrBytes": 0,
+      "stdoutSha256": "0d0e99f4e73f6792434c80f1dd307e65f38eff1c5e5353e9468c54dfb341af2e",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "passed": false,
+  "cleanup": true,
+  "error": "RuntimeError('host did not close successfully')",
+  "sourceUnchanged": true,
+  "scratchBytes": 591813751
+}

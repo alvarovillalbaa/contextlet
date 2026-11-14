@@ -69,9 +69,11 @@ def execute(name, arguments, timeout):
 
 try:
     execute("versions", ["node", "--version"], 10)
-    execute("tools", ["npm", "install", "--prefix", str(scratch / "tools"),
-                      "--ignore-scripts", "--no-audit", "--no-fund",
-                      "@vscode/test-electron@2.5.2", "@vscode/vsce@3.6.2"], 240)
+    (scratch / "tools").mkdir()
+    for name in ("package.json", "package-lock.json"):
+        shutil.copyfile(repo / "tests/fixtures/tools" / name, scratch / "tools" / name)
+    execute("tools", ["npm", "ci", "--prefix", str(scratch / "tools"),
+                      "--ignore-scripts", "--no-audit", "--no-fund"], 240)
     shutil.copyfile(scratch / "tools/package-lock.json", output / "tools-lock.json")
     execute("package", [str(scratch / "tools/node_modules/.bin/vsce"), "package",
                         "--no-dependencies", "--out", str(output / "contextlet-0.1.0.vsix")], 90)

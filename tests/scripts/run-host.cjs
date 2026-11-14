@@ -2,8 +2,9 @@
 const { runTests, downloadAndUnzipVSCode, resolveCliArgsFromVSCodeExecutablePath } = require('@vscode/test-electron');
 const fs = require('node:fs/promises');
 const path = require('node:path');
-const { execFileSync } = require('node:child_process');
+const { spawnSync } = require('node:child_process');
 const crypto = require('node:crypto');
+const assert = require('node:assert/strict');
 
 (async () => {
   const scratch = process.env.CONTEXTLET_SCRATCH;
@@ -14,15 +15,22 @@ const crypto = require('node:crypto');
   const vsix = path.join(receipt, 'contextlet-0.1.0.vsix');
   const extensions = path.join(scratch, 'extensions');
   const userData = path.join(scratch, 'profile');
-  const cliResult = execFileSync(cli, [...cliArgs, '--install-extension', vsix, '--extensions-dir', extensions, '--user-data-dir', userData, '--disable-telemetry', '--no-sandbox'], { encoding: 'utf8', timeout: 90000, maxBuffer: 2 * 1024 * 1024 });
-  await fs.writeFile(path.join(receipt, 'install.stdout.txt'), cliResult, { flag: 'wx' });
+  const cliResult = spawnSync(cli, [...cliArgs, '--install-extension', vsix, '--extensions-dir', extensions, '--user-data-dir', userData, '--disable-telemetry', '--no-sandbox'], { timeout: 90000, maxBuffer: 2 * 1024 * 1024 });
+  await fs.writeFile(path.join(receipt, 'install.stdout.txt'), cliResult.stdout || Buffer.alloc(0), { flag: 'wx' });
+  await fs.writeFile(path.join(receipt, 'install.stderr.txt'), cliResult.stderr || Buffer.alloc(0), { flag: 'wx' });
+  assert.equal(cliResult.status, 0, `VSIX installation failed: ${cliResult.error || cliResult.signal || cliResult.status}`);
   const installed = path.join(extensions, 'alvarovillalbaa.contextlet-0.1.0');
   const source = path.resolve(__dirname, '../..');
   const bound = [];
-  for (const file of ['package.json', 'src/core.cjs', 'src/extension.cjs', 'README.md', 'LICENSE', 'CHANGELOG.md']) {
-    const [expected, actual] = await Promise.all([fs.readFile(path.join(source, file)), fs.readFile(path.join(installed, file))]);
-    if (!actual.equals(expected)) throw new Error(`Installed payload differs: ${file}`);
-    bound.push({ file, bytes: actual.length, sha256: crypto.createHash('sha256').update(actual).digest('hex') });
+  for (const [file, installedName] of [['package.json', 'package.json'], ['src/core.cjs', 'src/core.cjs'], ['src/extension.cjs', 'src/extension.cjs'], ['README.md', 'readme.md'], ['LICENSE', 'LICENSE.txt'], ['CHANGELOG.md', 'changelog.md']]) {
+    const [expected, actual] = await Promise.all([fs.readFile(path.join(source, file)), fs.readFile(path.join(installed, installedName))]);
+    if (file === 'package.json') {
+      await fs.writeFile(path.join(receipt, 'installed-manifest.json'), actual, { flag: 'wx' });
+      const manifest = JSON.parse(actual);
+      delete manifest.__metadata;
+      assert.deepEqual(manifest, JSON.parse(expected), 'all installed product manifest fields must match source');
+    } else if (!actual.equals(expected)) throw new Error(`Installed payload differs: ${file}`);
+    bound.push({ file, installedName, comparison: file === 'package.json' ? 'all product fields; installer __metadata excluded' : 'exact bytes', bytes: actual.length, sha256: crypto.createHash('sha256').update(actual).digest('hex'), sourceSha256: crypto.createHash('sha256').update(expected).digest('hex') });
   }
   await fs.writeFile(path.join(receipt, 'installed-payload.json'), JSON.stringify(bound, null, 2), { flag: 'wx' });
   const fixture = path.join(scratch, 'authored-workspace');
