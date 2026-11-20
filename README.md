@@ -1,5 +1,9 @@
 # Contextlet
 
+<!-- project-family:start -->
+> **Project family:** [Developer Tools & Extensions](https://github.com/alvarovillalbaa#developer-tools-and-extensions) · **Area:** Editor extensions
+<!-- project-family:end -->
+
 Last updated: 2026-11-14
 
 Small, explicit context for the next person or agent. Select code, collect the
